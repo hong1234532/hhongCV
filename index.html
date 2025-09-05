@@ -11,9 +11,51 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
         <link rel="stylesheet" type="text/css" href="/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
+  <style>
+    .download-btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 20px;
+      background: #007BFF;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .download-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+    <body>
+
+  <!-- Download Button -->
+  <button class="download-btn" onclick="downloadPDF()">Download CV as PDF</button>
+
+  <!-- CV Container -->
+  <div class="container" id="cv">
+    <!-- your CV content -->
+    <!-- ... (all the HTML you pasted above goes here) ... -->
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById("cv");
+      const opt = {
+        margin:       0.5,
+        filename:     'My_CV.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
     </head>
- 
+     
     <body>
 
         <div class="container">
