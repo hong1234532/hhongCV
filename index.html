@@ -1,312 +1,173 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive CV using Html & CSS</title>
 
-<html>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" crossorigin="anonymous">
 
-    <head><meta charset="utf-8">
+  <!-- Your CSS -->
+  <link rel="stylesheet" type="text/css" href="/style.css">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- html2pdf.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-        <title>Responsive CV using Html &amp; CSS</title>
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-        <link rel="stylesheet" type="text/css" href="/style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-
+  <style>
+    .download-btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      padding: 10px 20px;
+      background: #007BFF;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+    .download-btn:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
-    <body>
- <button class="download-btn" onclick="downloadPDF()">Download CV as PDF</button>
+<body>
+
+  <!-- Download Button -->
+  <button class="download-btn" onclick="downloadPDF()">Download CV</button>
 
   <!-- CV Container -->
   <div class="container" id="cv">
-    <!-- your CV content -->
-    <!-- ... (all the HTML you pasted above goes here) ... -->
+
+      <div class="left_Side">
+          <div class="profileText">
+              <div class="imgBx">
+                  <img src="/IMAGE/hong.png" alt="Profile Image">
+              </div>
+              <h2>Hen NamHong<br><span>Information Technology</span></h2>
+          </div> 
+
+          <div class="contactinfo">
+              <h3 class="title">Contact Info</h3>
+              <ul>
+                  <li>
+                      <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                      <span class="text1">+855 172 370 51</span>
+                  </li>
+                  <li>
+                      <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                      <span class="text1">namhong1723@gmail.com</span>
+                  </li>
+                  <li>
+                      <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                      <span class="text1">Phnom Penh, Toul Kork</span>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="contactinfo education">
+              <h3 class="title">Education</h3>
+              <ul>
+                  <li>
+                      <h5>2022-2023</h5>
+                      <h4>Certificate of Foundation Year in Computer Science</h4>
+                      <h4>SETEC Institute</h4>
+                  </li>
+                  <li>
+                      <h5>2019-2020</h5>
+                      <h4>High School Diploma</h4>
+                      <h4>POUK High School</h4>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="contactinfo languag">
+              <h3 class="title">Languages</h3>
+              <ul>
+                  <li>
+                      <span class="text">English</span>
+                      <span class="percent"><div class="bar1" style="width: 85%;"></div></span>
+                  </li>
+                  <li>
+                      <span class="text">Khmer</span>
+                      <span class="percent"><div class="bar1" style="width: 99%;"></div></span>
+                  </li>
+              </ul>
+          </div>
+      </div> 
+
+      <div class="right_Side">
+          <div class="about">
+              <h2 class="title2">Profile</h2>
+              <p>A highly motivated and hardworking individual with a strong foundation in Computer Science. Seeking an internship in IT Networking to apply technical skills and gain practical industry experience.</p>
+          </div>
+
+          <div class="about">
+              <h2 class="title2">Experience</h2>
+              <div class="box">
+                  <div class="year_compnay">
+                      <h5>2022-2025 (Present)</h5>
+                      <h5>SETEC Institute</h5>
+                  </div>
+                  <div class="text">
+                      <h4>Computer Science Projects</h4>
+                      <p>
+                        • Assisted in troubleshooting and resolving <b>network connectivity issues</b> and IT support tasks for end-users.<br><br>
+                        • Provided technical support in diagnosing and fixing <b>hardware, software, and network-related problems</b>.<br><br>
+                        • Gained hands-on experience with <b>network configuration, installation, and maintenance</b> during academic projects.<br><br>
+                        • Contributed to setting up and maintaining databases with <b>SQL/MySQL</b>.<br><br>
+                        • Built a strong foundation in <b>TCP/IP networking, security, and troubleshooting tools</b> through coursework and self-learning.
+                      </p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="about skills">
+              <h2 class="title2">Skills</h2>
+              <div class="box">
+                  <h4>Windows Server</h4>
+                  <div class="percent"><div class="bar" style="width: 70%;"></div></div>
+              </div>
+              <div class="box">
+                  <h4>JavaScript</h4>
+                  <div class="percent"><div class="bar" style="width: 50%;"></div></div>
+              </div>
+              <div class="box">
+                  <h4>MySQL</h4>
+                  <div class="percent"><div class="bar" style="width: 60%;"></div></div>
+              </div>
+              <div class="box">
+                  <h4>Java</h4>
+                  <div class="percent"><div class="bar" style="width: 50%;"></div></div>
+              </div>
+          </div>
+
+          <div class="about interest">
+              <h2 class="title2">Interest</h2>
+              <ul>
+                  <li><i class="fa fa-book" aria-hidden="true"></i> Research</li>
+                  <li><i class="fa fa-headphones" aria-hidden="true"></i> Listening</li>
+              </ul>
+          </div>
+      </div>
   </div>
 
+  <!-- Script for PDF download -->
   <script>
     function downloadPDF() {
       const element = document.getElementById("cv");
       const opt = {
-        margin:       0.5,
-        filename:     'My_CV.pdf',
-        image:        { type: 'jpeg', quality: 0.98 },
-        html2canvas:  { scale: 2 },
-        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+        margin: 0.5,
+        filename: 'Hen_NamHong_CV.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
       };
       html2pdf().set(opt).from(element).save();
     }
   </script>
-
-
-
-    </head>
-     
-    <body>
-
-        <div class="container">
-
-            <div class="left_Side">
-
-                <div class="profileText">
-
-                    <div class="imgBx">
-
-                        <img src="/IMAGE/hong.png" alt="Profile Image">
-
-                    </div>
-
-                    <h2>Hen NamHong<br><span>information technology</span></h2>
-
-                </div> 
-
-                <div class="contactinfo">
-
-                    <h3 class="title">Contact Info</h3>
-
-                    <ul>
-
-                        <li>
-
-                            <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-
-                            <span class="text1"> +855 172 370 51 </span>
-
-                        </li>
-
-                        <li>
-
-                            <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-
-                            <span class="text1"> namhong1723@gmail.com </span>
-
-                        </li>
-
-                        <li>
-
-                            <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-
-                            <span class="text1"> Phnom Penh, Toul Kork</span>
-
-                        </li>
-
-                    </ul>
-
-                </div>
-
-                <div class="contactinfo education">
-
-                    <h3 class="title">Education</h3>
-
-                    <ul>
-
-                      <li>
-
-                        <h5>2022-2023</h5>
-
-                        <h4>CERTIFICATE OF FOINTSATION YEAR COURSE IN COMPUTER SCIENCE</h4>
-
-                        <h4>SETEC INSTITUTE</h4>
-
-                      </li>
-
-                      <li>
-
-                         <h5>2019-2020</h5>
-
-                         <h4>GRADUATION HIGH SCHOOL</h4>
-
-                         <h4>POUK HIGH SHCOOL</h4>
-
-                      </li>
-
-                    </ul>
-
-                </div>
-
-                <div class="contactinfo languag">
-
-                    <h3 class="title">Languags</h3>
-
-                    <ul>
-
-                        <li>
-
-                          <span class="text">English</span>
-
-                          <span class="percent">
-
-                            <div class="bar1" style="width: 85%;"></div>
-
-                        </span>
-
-                        </li>
-
-                        <li>
-
-                          <span class="text">Khmer</span>
-
-                          <span class="percent">
-
-                            <div class="bar1" style="width: 99%;"></div>
-                        
-                        </span>
-                        
-                        </li>
-
-                      </ul>
-
-                </div>
-
-            </div> 
-
-            <div class="right_Side">
-
-                <div class="about">
-
-                    <h2 class="title2">Profile</h2>
-
-                    <P1>A highly motivated and hardworking individual with good grades of bachelor degree in Computer Science. Seeking a full-time job to build career in Computer Science. Eventual career goal is to become a fully-qualified and experienced in this skill with the longer-term.</P1>
-
-                </div>
-
-                <div class="about">
-
-                    <h2 class="title2">Experience</h2>
-
-                    <div class="box">
-
-                        <div class="year_compnay">
-
-                            <h5>2022-2025 Present</h5>
-
-                            <h5>Setec institute</h5>
-
-                        </div>
-
-                            <div class="text">
-
-                                <h4>Computer Science</h4>
-                        
-                                <P> 
-                                   > Assisted in troubleshooting and resolving network connectivity issues and basic IT support tasks for end-users.
-                                      <br>  <br>
-                                   > Provided technical support in diagnosing and fixing hardware, software, and network-related problems.
-                                      <br>  <br>
-                                   > Gained practical experience with network configuration, installation, and maintenance during academic projects.
-                                      <br>  <br>
-                                   > Contributed to setting up and maintaining relational databases with SQL/MySQL for lab and project work.
-                                      <br>  <br>
-                                   > Built a strong foundation in network, TCP/IP, and troubleshooting tools through coursework and self-learning.
-                                </P>
-
-                            </div>
-
-                    </div>
-
-                </div>
-
-                <div class="about skills">
-
-                    <h2 class="title2">Skills</h2>
-
-                    <div class="box">
-
-                        <h4>Windows Server</h4>
-
-                        <div class="percent">
-
-                           <div class="bar" style="width: 70%;">
-
-                           </div>
-
-                        </div>
-
-                    </div>
-
-    
-    
-                    
-                    <div class="box">
-
-                        <h4>JAVA SCRIPT</h4>
-
-                        <div class="percent">
-
-                            <div class="bar" style="width: 50%;">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                        <div class="box">
-
-                        <h4>My SQL</h4>
-
-                        <div class="percent">
-
-                            <div class="bar" style="width: 60%;">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="box">
-
-                        <h4>JAVA</h4>
-
-                        <div class="percent">
-
-                            <div class="bar" style="width: 50%;">
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-              
-                    <!--<div class="box">
-
-                        <h4></h4>
-
-                        <div class="percent">
-
-                            <div class="bar" style="width: 90%;">
-
-                            </div>
-
-                        </div>
-
-                    </div>-->
-
-                </div>
-
-                <div class="about interest">
-
-                    <h2 class="title2">Interest</h2>
-
-                        <ul>
-
-                            <li><i class="fa fa-book" aria-hidden="true"></i>Research</li>
-
-                            <li><i class="fa fa-headphones" aria-hidden="true"></i>Listening</li>
-
-                        </ul>
-
-                </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-    </body>
-
+</body>
 </html>
