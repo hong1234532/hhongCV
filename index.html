@@ -16,6 +16,27 @@
 
 </head>
     <body>
+ <button class="download-btn" onclick="downloadPDF()">Download CV as PDF</button>
+
+  <!-- CV Container -->
+  <div class="container" id="cv">
+    <!-- your CV content -->
+    <!-- ... (all the HTML you pasted above goes here) ... -->
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const element = document.getElementById("cv");
+      const opt = {
+        margin:       0.5,
+        filename:     'My_CV.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    }
+  </script>
 
 
 
