@@ -159,19 +159,27 @@
       </div>
   </div>
 
-  <!-- Script for PDF download -->
-  <script>
-    function downloadPDF() {
-      const element = document.getElementById("cv");
-      const opt = {
-        margin: 0.5,
-        filename: 'Hen_NamHong_CV.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 10 },
-        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-      };
-      html2pdf().set(opt).from(element).save();
-    }
-  </script>
+ 
+<script>
+  function downloadPDF() {
+    const element = document.getElementById("cv");
+    const opt = {
+      margin:       0,
+      filename:     'Hen_NamHong_CV.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 3 }, 
+      jsPDF:        { unit: 'px', format: 'a4', orientation: 'portrait' },
+      pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+
+
+    html2pdf().set(opt).from(element).toPdf().get('pdf').then(function (pdf) {
+      const totalPages = pdf.internal.getNumberOfPages();
+      if (totalPages > 1) {
+        pdf.deletePage(2); 
+      }
+    }).save();
+  }
+</script>
 </body>
 </html>
