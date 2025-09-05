@@ -32,6 +32,13 @@
     .download-btn:hover {
       background: #0056b3;
     }
+    #cv {
+  width: 210mm;   /* A4 width */
+  height: 297mm;  /* A4 height */
+  padding: 20mm;
+  background: white;
+  box-sizing: border-box;
+}
   </style>
 </head>
 <body>
@@ -166,19 +173,11 @@
     const opt = {
       margin:       0,
       filename:     'Hen_NamHong_CV.pdf',
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 3 }, 
-      jsPDF:        { unit: 'px', format: 'a4', orientation: 'portrait' },
-      pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+      image:        { type: 'jpeg', quality: 1 },
+      html2canvas:  { scale: 2, useCORS: true },
+      jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
-
-
-    html2pdf().set(opt).from(element).toPdf().get('pdf').then(function (pdf) {
-      const totalPages = pdf.internal.getNumberOfPages();
-      if (totalPages > 1) {
-        pdf.deletePage(2); 
-      }
-    }).save();
+    html2pdf().set(opt).from(element).save();
   }
 </script>
 </body>
