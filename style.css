@@ -523,24 +523,13 @@ P
     width: 20px;
 
 }
-<style>
-    .download-btn {
-      display: inline-block;
-      margin: 20px;
-      padding: 10px 20px;
-      background: #007BFF;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .download-btn:hover {
-      background: #0056b3;
-    }
-  </style>
-
-@media (max-width: 1000px) 
+#cv {
+  width: 210mm;   /* A4 width */
+  height: 297mm;  /* A4 height */
+  padding: 20mm;
+  background: white;
+  box-sizing: border-box;
+}
 
 {
 
